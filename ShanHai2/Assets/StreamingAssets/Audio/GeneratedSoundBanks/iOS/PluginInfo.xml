@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PluginInfo Platform="iOS" BasePlatform="iOS">
-	<PluginLibs>
-		<PluginLib LibName="Wwise Silence" LibId="6619138" Type="Source" DLL="AkSilenceGenerator" StaticLib="AkSilenceSource"/>
-		<PluginLib LibName="System" LibId="11403271" Type="AudioDevice"/>
-		<PluginLib LibName="No Output" LibId="11862023" Type="AudioDevice"/>
-	</PluginLibs>
-	<FileHash>{95EBBF0E-A2FD-E86D-37C7-3A42282C92BC}</FileHash>
-</PluginInfo>

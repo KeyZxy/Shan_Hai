@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="shanhai_WwiseProject" GUID="{62D27886-87AB-454A-A4D1-438EDA223647}" Generator="2022.1.17.8543"/>
+	<CacheRoot>../../../../../shanhai_WwiseProject/shanhai_WwiseProject/.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Android" GUID="{83576E2B-70DF-4EE6-A0C5-731E0511C290}" BasePlatform="Android" BasePlatformGUID="{A2D401DE-B8B6-4FEB-8142-137C34D507CA}" Path="Android"/>
+		<Platform Name="iOS" GUID="{0C429287-A29D-48E8-BACE-DD11029CE1F9}" BasePlatform="iOS" BasePlatformGUID="{ECE03DB4-F948-462D-B2BB-A9173012B1F8}" Path="iOS"/>
+		<Platform Name="Mac" GUID="{E399CBA6-4123-427C-8007-92BEC1E5A3D3}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="Mac"/>
+		<Platform Name="Windows" GUID="{70EEAEC4-BB80-43C1-ABD2-2160235E61F9}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{ADB69CCE-34B4-405C-A97F-F1D128DCE0B1}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{7C1B8C11-FAD6-DCE4-C505-4A0D2D54AAD8}</FileHash>
+</ProjectInfo>

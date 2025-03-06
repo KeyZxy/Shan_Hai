@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6027610863beb394eba91a9c0a8de253, type: 3}
+  m_Name: 85192832-4672-4F9E-9CE6-FC77F5F89E5F
+  m_EditorClassIdentifier: 
+  objectName: ENV_Object_birds
+  id: 396869397
+  guid: 85192832-4672-4F9E-9CE6-FC77F5F89E5F
