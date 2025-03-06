@@ -1,0 +1,20 @@
+Event	ID	Name			Wwise Object Path	Notes
+	396869397	ENV_Object_birds			\Environment\ENV_Object_birds	
+	3938107231	ENV_Ambience_Forest_Bed			\Environment\ENV_Ambience_Forest_Bed	
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	235040426	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Environment\ENV\Object\birds\silence\New Sound SFX\Silence	
+	324414450	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Environment\ENV\Object\birds\silence\New Sound SFX_01\Silence	
+	388349403	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Environment\ENV\Object\birds\silence\New Sound SFX_03\Silence	
+	1035976911	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Environment\ENV\Object\birds\silence\New Sound SFX_02\Silence	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	50787201	18 Sparrow Sings_M	G:\ShanHaiZhiShang\shanhai_WwiseProject\shanhai_WwiseProject\.cache\Windows\SFX\18 Sparrow Sings.M_10C4C929.wem		\Actor-Mixer Hierarchy\Environment\ENV\Object\birds\Tree_birds\18 Sparrow Sings_M		281696
+	204200699	1-05 Morning Park Birds_M	G:\ShanHaiZhiShang\shanhai_WwiseProject\shanhai_WwiseProject\.cache\Windows\SFX\1-05 Morning Park Birds.M_10C4C929.wem		\Actor-Mixer Hierarchy\Environment\ENV\Object\birds\Tree_birds\1-05 Morning Park Birds_M		562272
+	626434810	20 Woodpecker Chirps_M	G:\ShanHaiZhiShang\shanhai_WwiseProject\shanhai_WwiseProject\.cache\Windows\SFX\20 Woodpecker Chirps.M_10C4C929.wem		\Actor-Mixer Hierarchy\Environment\ENV\Object\birds\Tree_birds\20 Woodpecker Chirps_M		146528
+	702377644	1-05 Morning Park Birds-1_M	G:\ShanHaiZhiShang\shanhai_WwiseProject\shanhai_WwiseProject\.cache\Windows\SFX\1-05 Morning Park Birds-1.M_10C4C929.wem		\Actor-Mixer Hierarchy\Environment\ENV\Object\birds\Tree_birds\1-05 Morning Park Birds-1_M		554080
+	787712497	14 Peacock Calls_M	G:\ShanHaiZhiShang\shanhai_WwiseProject\shanhai_WwiseProject\.cache\Windows\SFX\14 Peacock Calls.M_10C4C929.wem		\Actor-Mixer Hierarchy\Environment\ENV\Object\birds\Tree_birds\14 Peacock Calls_M		323680
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	568035037	ENV Ambience Forest Bed	G:\ShanHaiZhiShang\shanhai_WwiseProject\shanhai_WwiseProject\.cache\Windows\SFX\ENV ambience forest bed_D79FB2B7.wem	568035037.wem	\Actor-Mixer Hierarchy\Environment\ENV\Ambience\ENV Ambience Forest Bed	
+

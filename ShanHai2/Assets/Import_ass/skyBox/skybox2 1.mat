@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: skybox2 1
+  m_Shader: {fileID: 4800000, guid: cbb4de7a14dbaac4e87c32ffc5763845, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GalaxyTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _StarNoiseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _galaxyNoiseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _startex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _ColorIntensity: 0.61
+    - _ColorIntensity1: 1.93
+    - _ColorRange: 0.82
+    - _ColorRange1: 1.98
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _ExtinctionM: 10
+    - _ExtinctionMMoon: 10
+    - _GalaxyScopePow: 1
+    - _GalaxyScopeRadius: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HorizonHeight: 0.5
+    - _HorizonIntensity: 10
+    - _MaskMoonRadius: 1
+    - _Metallic: 0
+    - _MieG: 0.75
+    - _MieGMoon: 0.5
+    - _MieStrength: 3
+    - _MieStrengthMoon: 1
+    - _Mode: 0
+    - _MoonEdgePlus: 1
+    - _Moonout: 1
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SoftMoonEdge: 1
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    - _globalDensity: 0.55
+    - _moon_jitter_x: 0
+    - _moon_jitter_z: 0
+    - _moonradius: 0.2
+    - _planetradius: 30000
+    - _raystart: 0.5
+    - _starculloff: 0.5
+    - _sunradius: 0.136
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GalaxyColor1: {r: 1, g: 1, b: 1, a: 1}
+    - _GalaxyColor2: {r: 1, g: 1, b: 1, a: 1}
+    - _GalaxyColor3: {r: 1, g: 1, b: 1, a: 1}
+    - _GalaxyDir: {r: 1, g: 1, b: 1, a: 1}
+    - _HorizonColorDay: {r: 1, g: 1, b: 1, a: 1}
+    - _HorizonColorNight: {r: 1, g: 1, b: 1, a: 1}
+    - _MieColor: {r: 1, g: 0.49622637, b: 0.49622637, a: 1}
+    - _MoonColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Scatterm: {r: 1, g: 0.69689226, b: 0.39811313, a: 1}
+    - _Scatterm_moon: {r: 1, g: 1, b: 1, a: 1}
+    - _SkyColorFar: {r: 1, g: 0.91372555, b: 0.6313726, a: 1}
+    - _SkyColorMid: {r: 0.84705883, g: 0.63529414, b: 0.45882356, a: 1}
+    - _SkyColorNear: {r: 0.7106918, g: 0.6436454, b: 0.6280012, a: 1}
+    - _SunColor: {r: 1, g: 0.6606362, b: 0.36792436, a: 1}
+    - _SunSetColor: {r: 1, g: 1, b: 1, a: 1}
+    - _daybottomcolor: {r: 1, g: 1, b: 1, a: 1}
+    - _daytopcolor: {r: 1, g: 1, b: 1, a: 1}
+    - _nightbottomcolor: {r: 0, g: 0, b: 0, a: 1}
+    - _nighttopcolor: {r: 0, g: 0, b: 0, a: 1}
+    - _starcolor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
