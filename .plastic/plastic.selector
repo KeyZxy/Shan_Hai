@@ -1,4 +1,0 @@
-repository "山海之上_云端2@tj_42139cd9_3db9_49cc_beec_f3e841341596@cloud.cn"
-  path "/"
-    br "/main"
-    co "/main"
