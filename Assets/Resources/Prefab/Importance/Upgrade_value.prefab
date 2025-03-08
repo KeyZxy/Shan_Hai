@@ -1,0 +1,941 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3171976473156097712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 573342408617579194}
+  - component: {fileID: 913930815485513743}
+  m_Layer: 0
+  m_Name: Upgrade_value
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &573342408617579194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3171976473156097712}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1188.2378, y: 507.39523, z: 4.3623085}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &913930815485513743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3171976473156097712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff9881b4c4cd9d049877007982b1dae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infos:
+  - act: 1
+    attr_ID: 200001
+    attr_name: "\u751F\u547D\u503C"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200003
+    attr_name: "\u653B\u51FB\u529B"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 10
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200004
+    attr_name: "\u9632\u5FA1\u529B"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 0
+      def: 10
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200005
+    attr_name: "\u56DE\u907F"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 2
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200006
+    attr_name: "\u66B4\u51FB\u7387"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200007
+    attr_name: "\u66B4\u51FB\u4F24\u5BB3"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 20
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200008
+    attr_name: "\u653B\u51FB\u901F\u5EA6"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.1
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200009
+    attr_name: "\u6280\u80FD\u51B7\u5374"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.1
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200010
+    attr_name: "\u653B\u51FB\u6570\u91CF"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 2
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200011
+    attr_name: "\u6301\u7EED\u65F6\u95F4"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 0.5
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200012
+    attr_name: "\u79FB\u52A8\u901F\u5EA6"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 2
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200002
+    attr_name: "\u56DE\u590D"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 1
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200014
+    attr_name: "\u62FE\u53D6\u8DDD\u79BB"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 1
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 5
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200015
+    attr_name: "\u8D22\u8FD0"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 1
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 5
+      gold_extra: 10
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200016
+    attr_name: "\u8FD0\u6C14"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 1
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 5
+      gold_extra: 10
+      luck: 10
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200017
+    attr_name: "\u6210\u957F"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 5
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 10
+      hp: 0
+      mp_Recovery: 1
+      stamina: 0
+      atk: 5
+      def: 5
+      avoid: 5
+      crit: 5
+      crit_Atk: 10
+      attack_speed: 0.2
+      cool_down: 0.2
+      atk_count: 1
+      atk_duration: 1
+      move_speed: 5
+      fly_up_speed: 0
+      attack_distance: 5
+      pick_distance: 5
+      gold_extra: 10
+      luck: 10
+      ex_extra: 3
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  Last_3_infos:
+  - act: 1
+    attr_ID: 200018
+    attr_name: "\u52A0\u94B1"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 100
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 0
+      hp: 0
+      mp_Recovery: 0
+      stamina: 0
+      atk: 0
+      def: 0
+      avoid: 0
+      crit: 0
+      crit_Atk: 0
+      attack_speed: 0
+      cool_down: 0
+      atk_count: 0
+      atk_duration: 0
+      move_speed: 0
+      fly_up_speed: 0
+      attack_distance: 0
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200019
+    attr_name: "\u8840\u5305"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 100
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 0
+      hp: 100
+      mp_Recovery: 0
+      stamina: 0
+      atk: 0
+      def: 0
+      avoid: 0
+      crit: 0
+      crit_Atk: 0
+      attack_speed: 0
+      cool_down: 0
+      atk_count: 0
+      atk_duration: 0
+      move_speed: 0
+      fly_up_speed: 0
+      attack_distance: 0
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
+  - act: 1
+    attr_ID: 200020
+    attr_name: "\u5F85\u5B9A"
+    Description: 
+    type: 0
+    type_attr:
+      ID: 
+      name: 
+      grade: 100
+      level: 0
+      current_ex: 0
+      max_ex: 0
+      max_hp: 0
+      hp: 100
+      mp_Recovery: 0
+      stamina: 0
+      atk: 0
+      def: 0
+      avoid: 0
+      crit: 0
+      crit_Atk: 0
+      attack_speed: 0
+      cool_down: 0
+      atk_count: 0
+      atk_duration: 0
+      move_speed: 0
+      fly_up_speed: 0
+      attack_distance: 0
+      pick_distance: 0
+      gold_extra: 0
+      luck: 0
+      ex_extra: 0
+    type_skill:
+      ID: 0
+      name: 
+      type: 0
+      Lv: 0
+      CD: 0
+      Timer: 0
+      cast_time: 0
+      duration: 0
+      count: 0
+      Atk: 0
+      crit: 0
+      crit_atk: 0
+      size: 0
+      move_speed: 0
