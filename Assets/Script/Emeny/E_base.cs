@@ -10,6 +10,9 @@ public class E_base : MonoBehaviour
     public biology_info e_value = new biology_info();
     public int HUDT_offset;
     public bool canFly;
+    public bool Free_move;
+    public float Atk_distance = 15;
+    public List<GameObject> _areas = new List<GameObject>();
 
     protected CharacterController C_ctr;
     protected Transform _target;
@@ -22,6 +25,13 @@ public class E_base : MonoBehaviour
     protected Vector3 playerVelocity;
     protected bool isDie = false;
     protected bool isAttack = false;
+    protected bool Out_area = false;
+    protected Vector3 original_posi;
+    protected bool In_atk_are = false;
+    protected bool walking = false;
+    protected float walk_time;
+    protected float walk_timer;
+    protected Vector3 walk_destination;
 
     private Vector3 pushForce = Vector3.zero;
     private float pushDecay = 5f; // 推力衰减速度
@@ -33,12 +43,27 @@ public class E_base : MonoBehaviour
         C_ctr = transform.GetComponent<CharacterController>();
         move_speed = Time_Range(e_value.move_speed, min_move, max_move);
         _anim = transform.GetComponent<Anim_Fox>();
+        original_posi = transform.position;
+        e_value.hp = e_value.max_hp;
+        Random_walk_time();
+        StartCoroutine(CheckDistanceRoutine());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isAttack || isDie || In_atk_are || Out_area || walking)
+        {
+            Random_walk_time();
+            walk_timer = 0;
+            return;
+        }
+        walk_timer += Time.deltaTime;
+        if (walk_timer > walk_time)
+        {
+            walking = true;
+            walk_destination = GetRandomPosi(original_posi, 5, 5);
+        }
     }
 
     public void ApplyPush(Vector3 force)
@@ -59,9 +84,6 @@ public class E_base : MonoBehaviour
             pushForce = Vector3.Lerp(pushForce, Vector3.zero, pushDecay * Time.deltaTime);
             return;
         }
-        if (!isAttack)
-            Attack_function();
-
         if (!canFly)
         {
             // 检查是否在地面上
@@ -73,6 +95,40 @@ public class E_base : MonoBehaviour
             playerVelocity.y += gravityValue * Time.fixedDeltaTime;
             C_ctr.Move(playerVelocity * Time.fixedDeltaTime);
         }
+        if (Out_area)
+        {
+            Go_back();
+            return;
+        }
+        if (Free_move)
+        {
+            if (In_atk_are)
+            {
+                walking = false;
+                walk_timer = 0;
+                if (Out_of_area())
+                {
+                    Out_area = true;
+                    In_atk_are = false;
+                    return;
+                }
+                if (!isAttack)
+                    Attack_function();
+            }
+            else
+            {
+                if (walking)
+                {
+                    Free_walking();
+                }
+            }
+        }
+        else
+        {
+            if (!isAttack)
+                Attack_function();
+        }
+
     }
 
     float Time_Range(float time, float min, float max)
@@ -118,8 +174,52 @@ public class E_base : MonoBehaviour
         }
     }
 
+    private void Free_walking()
+    {
+        Vector3 posi = new Vector3(walk_destination.x, transform.position.y, walk_destination.z);
+        transform.LookAt(posi);
+
+        float distance = Vector3.Distance(transform.position, walk_destination);
+        if ((distance <= 1))
+        {
+            // 到达距离
+            walking = false;
+            walk_timer = 0;
+            Random_walk_time();
+            _anim.change_anim(Anim_state.Idle);
+        }
+        else
+        {
+            Vector3 moveDirection = (walk_destination - transform.position).normalized;
+            Vector3 move = moveDirection * e_value.move_speed * Time.fixedDeltaTime;
+            C_ctr.Move(move);
+            _anim.change_anim(Anim_state.Run);
+        }
+    }
+    private void Go_back()
+    {
+        Vector3 posi = new Vector3(original_posi.x, transform.position.y, original_posi.z);
+        transform.LookAt(posi);
+
+        float distance = Vector3.Distance(transform.position, original_posi);
+        if ((distance <= 1))
+        {
+            // 到达距离
+            Out_area = false;
+            e_value.hp = e_value.max_hp;
+            _anim.change_anim(Anim_state.Idle);
+        }
+        else
+        {
+            Vector3 moveDirection = (original_posi - transform.position).normalized;
+            Vector3 move = moveDirection * e_value.move_speed * Time.fixedDeltaTime * 2f;
+            C_ctr.Move(move);
+            _anim.change_anim(Anim_state.Run);
+        }
+    }
+
     // 受伤害函数
-    public void Get_damage(Transform source , Player_skill_class skill)
+    public void Get_damage(Transform source, Player_skill_class skill)
     {
         if (isDie)
             return;
@@ -175,14 +275,47 @@ public class E_base : MonoBehaviour
             transform.tag = "Untagged";
             C_ctr.enabled = false;
             GameObject exp_obj = ResourceManager.Instance.GetResource<GameObject>("Particle/EXP/EXP_obj");
-            GameObject obj = GameObject.Instantiate(exp_obj, transform.position, transform.localRotation , GameObject.Find("Exp_group").transform);
+            GameObject obj = GameObject.Instantiate(exp_obj, transform.position, transform.localRotation, GameObject.Find("Exp_group").transform);
             obj.GetComponent<Exp_sc>().Set_exp(e_value.current_ex);
             StartCoroutine(delay_destroy(2f));
         }
     }
 
+    bool Out_of_area()
+    {
+        bool isOutsideAll = true;
 
+        foreach (GameObject area in _areas)
+        {
+            E_area_sc areaScript = area.GetComponent<E_area_sc>();
+            if (areaScript != null && areaScript.IsInsideCollider(gameObject))
+            {
+                isOutsideAll = false;
+                break;
+            }
+        }
 
+        if (isOutsideAll)
+        {
+            isOutsideAll = true;
+        }
+        return isOutsideAll;
+    }
+
+    Vector3 GetRandomPosi(Vector3 originalPos, float minRange, float maxRange)
+    {
+        // 获取原始位置的 X 和 Z 坐标，忽略 Y 轴
+        float randomX = Random.Range(originalPos.x - minRange, originalPos.x + maxRange);
+        float randomZ = Random.Range(originalPos.z - minRange, originalPos.z + maxRange);
+
+        // 生成新的随机位置，Y 坐标保持为原始位置的 Y 坐标
+        return new Vector3(randomX, originalPos.y, randomZ);
+    }
+
+    void Random_walk_time()
+    {
+        walk_time = Random.Range(3f, 8f);
+    }
 
     protected virtual IEnumerator delay_Active_attack(float time)
     {
@@ -200,6 +333,21 @@ public class E_base : MonoBehaviour
         isAttack = false;
     }
 
+    IEnumerator CheckDistanceRoutine()
+    {
+        while (true)
+        {
+            if (!Out_area)
+            {
+                float dis = Vector3.Distance(_target.position, transform.position);
+                if (dis < Atk_distance)
+                {
+                    In_atk_are = true;
+                }
+            }
+            yield return new WaitForSeconds(0.2f); // 每 0.2 秒检测一次
+        }
+    }
 
     IEnumerator delay_destroy(float time)
     {

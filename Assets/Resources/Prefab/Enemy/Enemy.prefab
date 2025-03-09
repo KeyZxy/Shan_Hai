@@ -90,8 +90,8 @@ MonoBehaviour:
     level: 1
     current_ex: 30
     max_ex: 0
-    max_hp: 0
-    hp: 500
+    max_hp: 500
+    hp: 0
     mp_Recovery: 0
     stamina: 0
     atk: 10
@@ -112,6 +112,11 @@ MonoBehaviour:
     ex_extra: 0
   HUDT_offset: -50
   canFly: 0
+  Free_move: 1
+  Atk_distance: 20
+  _areas:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &8998084160016557242
 MonoBehaviour:
   m_ObjectHideFlags: 0
