@@ -112,7 +112,7 @@ MonoBehaviour:
     ex_extra: 0
   HUDT_offset: -50
   canFly: 0
-  Free_move: 1
+  Free_move: 0
   Atk_distance: 20
   _areas:
   - {fileID: 0}
