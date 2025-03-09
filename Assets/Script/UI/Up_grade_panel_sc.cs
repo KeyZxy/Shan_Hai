@@ -11,7 +11,7 @@ public class Up_grade_panel_sc : MonoBehaviour
     public GameObject opt_3;
     public GameObject buttom_posi;
     public GameObject bagua;
-    public GameObject xinghuan;
+ 
 
 
     private Camera_move _cam;
@@ -52,7 +52,7 @@ public class Up_grade_panel_sc : MonoBehaviour
         opt_2.SetActive(false);
         opt_3.SetActive(false);
         bagua.SetActive(false);
-        xinghuan.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -68,7 +68,7 @@ public class Up_grade_panel_sc : MonoBehaviour
         opt_2.SetActive(true);
         opt_3.SetActive(true);
         bagua.SetActive(true);
-        xinghuan.SetActive(true);
+
 
         // 启动 UI 元素上升动画
         yield return MoveUIToPosition(opt_1, targetPos_1, startOffscreenPos_1);
@@ -131,7 +131,7 @@ public class Up_grade_panel_sc : MonoBehaviour
         opt_2.SetActive(false);
         opt_3.SetActive(false);
         bagua.SetActive(false);
-        xinghuan.SetActive(false);
+  
 
         opt_1.transform.position = startOffscreenPos_1;
         opt_2.transform.position = startOffscreenPos_2;
