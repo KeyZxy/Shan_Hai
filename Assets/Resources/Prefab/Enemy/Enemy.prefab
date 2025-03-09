@@ -103,7 +103,7 @@ MonoBehaviour:
     cool_down: 0
     atk_count: 0
     atk_duration: 0
-    move_speed: 3
+    move_speed: 4.5
     fly_up_speed: 0
     attack_distance: 1.8
     pick_distance: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
     ex_extra: 0
   HUDT_offset: -50
   canFly: 0
-  Free_move: 1
+  Free_move: 0
   Atk_distance: 20
   _areas:
   - {fileID: 0}
