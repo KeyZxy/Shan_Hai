@@ -1,9 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	202194903	music_play			\Music\music_play	
-
-Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
-	5043586	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Music\music\music_explore\silence\Silence	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	995990213	explore	G:\ShanHaiZhiShang\shanhai_WwiseProject\shanhai_WwiseProject\shanhai_WwiseProject\shanhai_WwiseProject\.cache\iOS\SFX\explore_F494F2BC.wem		\Actor-Mixer Hierarchy\Music\music\music_explore\explore		11547932
-

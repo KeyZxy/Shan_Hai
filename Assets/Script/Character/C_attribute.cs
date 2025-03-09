@@ -7,6 +7,15 @@ public class C_attribute : MonoBehaviour
 
     public Up_grade_panel_sc _upgrade;
     public biology_info c_Value = new biology_info();
+    //属性道具
+    public GameObject liulizhu;
+    public GameObject shenmuqin;
+    public GameObject qingzhiying;
+    public GameObject ruyi;
+    public GameObject jiake;
+    public GameObject yazhui;
+
+
 
     private C_Pick_up_sc _pickup;
     private bool stop_moving = false;
@@ -20,6 +29,12 @@ public class C_attribute : MonoBehaviour
         _pickup = transform.Find("Pick_up_area").GetComponent<C_Pick_up_sc>();
         _up_attr = transform.GetComponent<C_upgrade_attr>();
         _Passive = transform.GetComponent<C_passive>();
+        liulizhu.SetActive(false);
+        shenmuqin.SetActive(false);
+        qingzhiying.SetActive(false);
+        ruyi.SetActive(false);
+        jiake.SetActive(false);
+        yazhui.SetActive(false);
     }
 
     // Update is called once per frame
@@ -95,16 +110,20 @@ public class C_attribute : MonoBehaviour
             case 200001:
                 int maxhp = Mathf.RoundToInt(Get_max_hp() * (info.type_attr.max_hp / 100f));
                 c_Value._upgrade.max_hp += maxhp;
+                qingzhiying.SetActive(true);
                 break;
             case 200002:
                 c_Value._upgrade.mp_Recovery += info.type_attr.mp_Recovery;
+                ruyi.SetActive(true);
                 break;
             case 200003:
                 int atk = Mathf.RoundToInt(Get_atk() * (info.type_attr.atk / 100f));
                 c_Value._upgrade.atk += atk;
+                shenmuqin.SetActive(true);
                 break;
             case 200004:
                 int def = Mathf.RoundToInt(Get_def() * (info.type_attr.def / 100f));
+                jiake.SetActive(true);
                 c_Value._upgrade.def += def;
                 break;
             case 200005:
@@ -118,6 +137,7 @@ public class C_attribute : MonoBehaviour
                 break;
             case 200008:
                 c_Value._upgrade.attack_speed += info.type_attr.attack_speed;
+                yazhui.SetActive(true);
                 break;
             case 200009:
                 c_Value._upgrade.cool_down += info.type_attr.cool_down;
@@ -130,6 +150,7 @@ public class C_attribute : MonoBehaviour
                 break;
             case 200012:
                 c_Value._upgrade.move_speed += info.type_attr.move_speed;
+                liulizhu.SetActive(true);
                 break;
             case 200013:
                 c_Value._upgrade.attack_distance += info.type_attr.attack_distance;
