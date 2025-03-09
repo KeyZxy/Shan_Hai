@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class C_upgrade_attr : MonoBehaviour
 {
     public List<upgrade_info> infos = new List<upgrade_info>();
     public List<upgrade_info> passive_infos = new List<upgrade_info>();
     private List<upgrade_info> Temp_infos = new List<upgrade_info>();
+
+    
 
     private Upgrade_value_sc _upgrade;
     private C_base _base;
@@ -28,6 +30,7 @@ public class C_upgrade_attr : MonoBehaviour
         //{
         ////    Debug.Log(ins[i].attr_ID);
         //}
+        
     }
 
 

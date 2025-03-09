@@ -8,7 +8,10 @@ public class C_passive : MonoBehaviour
 
     public List<GameObject> Obj_list = new List<GameObject>();
     private List<GameObject> Passive_list = new List<GameObject>();
-
+    //被动技能图标
+    public GameObject shui;
+    public GameObject jian;
+    public GameObject deng;
     private C_attribute _attr;
     private C_upgrade_attr _upgrade_attr;
 
@@ -17,6 +20,9 @@ public class C_passive : MonoBehaviour
     {
         _attr = transform.GetComponent<C_attribute>();
         _upgrade_attr = transform.GetComponent<C_upgrade_attr>();
+        shui.SetActive(false);
+        jian.SetActive(false);
+        deng.SetActive(false);
     }
 
     // Update is called once per frame
@@ -31,12 +37,15 @@ public class C_passive : MonoBehaviour
         {
             case 220003: // 水环-太阴玄水
                 CreateOrReplacePassiveObject(id, typeof(shuihuan_sc));
+                shui.SetActive(true);
                 break;
             case 220001: // 环绕飞剑-桃木剑环
                 CreateOrReplacePassiveObject(id, typeof(sword_sc));
+                jian.SetActive(true);
                 break;
             case 220002: // 小炮仗-离火弹花
                 CreateOrReplacePassiveObject(id, typeof(xiaopaozhang_sc));
+                deng.SetActive(true);
                 break;
 
             default:
