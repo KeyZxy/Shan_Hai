@@ -3,6 +3,7 @@ Shader "Unlit/scroll"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _BackTex("backTex",2D) = "white" {}
     }
     SubShader
     {
@@ -44,7 +45,7 @@ Shader "Unlit/scroll"
                 SHADOW_COORDS(3)
             };
 
-            sampler2D _MainTex;
+            sampler2D _MainTex,;
             float4 _MainTex_ST;
 
             v2f vert (appdata v)
@@ -116,8 +117,8 @@ Shader "Unlit/scroll"
                 SHADOW_COORDS(3)
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
+            sampler2D _MainTex, _BackTex;
+            float4 _MainTex_ST, _BackTex_ST;
 
             v2f vert (appdata v)
             {
@@ -134,7 +135,7 @@ Shader "Unlit/scroll"
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                fixed4 base = tex2D(_MainTex, i.uv);
+                fixed4 base = tex2D(_BackTex, i.uv);
                 float3 ambient = UNITY_LIGHTMODEL_AMBIENT;
                 //half3 ambient = half3(unity_SHAr.w, unity_SHAg.w, unity_SHAb.w);
                 float3 worldNormal = UnityObjectToWorldNormal(i.normal);
