@@ -32,9 +32,29 @@ public class E_base : MonoBehaviour
     protected float walk_time;
     protected float walk_timer;
     protected Vector3 walk_destination;
+    protected bool target_die = false;
 
-    private Vector3 pushForce = Vector3.zero;
-    private float pushDecay = 5f; // 推力衰减速度
+    protected Vector3 pushForce = Vector3.zero;
+    protected float pushDecay = 5f; // 推力衰减速度
+
+    void OnEnable()
+    {
+        // 订阅主角死亡事件
+        C_base.OnPlayerDeath += OnPlayerDeath;
+    }
+
+    void OnDisable()
+    {
+        // 取消订阅，避免内存泄漏
+        C_base.OnPlayerDeath -= OnPlayerDeath;
+    }
+
+    // 接受广播
+    private void OnPlayerDeath()
+    {
+        //Debug.Log("收到玩家死亡广播！执行游戏结束逻辑！");
+        target_die = true;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -73,7 +93,7 @@ public class E_base : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isDie)
+        if (isDie || target_die)
             return;
         if (pushForce.magnitude > 0.1f)
         {
@@ -325,6 +345,8 @@ public class E_base : MonoBehaviour
         GameObject go = GameObject.Instantiate(FB, posi, transform.rotation);
         go.transform.position = go.transform.position + go.transform.forward * 2f;
         go.transform.position = go.transform.position + go.transform.up * 0.8f;
+        Player_skill_class ss = new Player_skill_class();
+        go.GetComponent<bite_sc>().Init(e_value , ss);
     }
     protected IEnumerator delay_change_state(float time)
     {

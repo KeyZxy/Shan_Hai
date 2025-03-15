@@ -118,6 +118,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f70353ca6008b843aacdd5e3e249f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  born_text: {fileID: 0}
-  Enemy: {fileID: 5423968335084978183, guid: b4d1bedb2508e24498a1a219a95310fe, type: 3}
-  interval: 3
+  Enemy_obj: {fileID: 5423968335084978183, guid: b4d1bedb2508e24498a1a219a95310fe, type: 3}
+  Live_time: 20
+  Interval: 5
+  Count: 2
+  Speed_up_value: 30
+  Speed_up_interval: 3
+  Speed_up_count: 3
+  Posi_s:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
