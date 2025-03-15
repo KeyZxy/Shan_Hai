@@ -90,11 +90,11 @@ MonoBehaviour:
     level: 1
     current_ex: 30
     max_ex: 0
-    max_hp: 500
+    max_hp: 350
     hp: 0
     mp_Recovery: 0
     stamina: 0
-    atk: 10
+    atk: 50
     def: 2
     avoid: 3
     crit: 5
@@ -103,7 +103,7 @@ MonoBehaviour:
     cool_down: 0
     atk_count: 0
     atk_duration: 0
-    move_speed: 3
+    move_speed: 4.5
     fly_up_speed: 0
     attack_distance: 1.8
     pick_distance: 0
