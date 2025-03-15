@@ -68,6 +68,14 @@ public class C_anim : MonoBehaviour
                 anim.SetInteger("Anim_state", 5);
                 Current_anim = Anim_state.Ready;
                 break;
+            case Anim_state.Die:
+                anim.SetTrigger("Die");
+                Current_anim = Anim_state.Die;
+                break;
+            case Anim_state.Jump:
+                anim.SetInteger("Anim_state", 6);
+                Current_anim = Anim_state.Jump;
+                break;
 
         }
     }

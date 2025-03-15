@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class C_attribute : MonoBehaviour
@@ -7,20 +8,13 @@ public class C_attribute : MonoBehaviour
 
     public Up_grade_panel_sc _upgrade;
     public biology_info c_Value = new biology_info();
-    //属性道具
-    public GameObject liulizhu;
-    public GameObject shenmuqin;
-    public GameObject qingzhiying;
-    public GameObject ruyi;
-    public GameObject jiake;
-    public GameObject yazhui;
-
-
+    public int HUDT_offset = 100;
 
     private C_Pick_up_sc _pickup;
     private bool stop_moving = false;
     private C_upgrade_attr _up_attr;
     private C_passive _Passive;
+    private C_anim _Anim;
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +23,7 @@ public class C_attribute : MonoBehaviour
         _pickup = transform.Find("Pick_up_area").GetComponent<C_Pick_up_sc>();
         _up_attr = transform.GetComponent<C_upgrade_attr>();
         _Passive = transform.GetComponent<C_passive>();
-        liulizhu.SetActive(false);
-        shenmuqin.SetActive(false);
-        qingzhiying.SetActive(false);
-        ruyi.SetActive(false);
-        jiake.SetActive(false);
-        yazhui.SetActive(false);
+        _Anim = transform.GetComponent<C_anim>();
     }
 
     // Update is called once per frame
@@ -103,6 +92,46 @@ public class C_attribute : MonoBehaviour
 
     }
 
+    public bool Reduce_hp(int value, bool crit, bool isAvoid)
+    {
+        bool isDie = false;
+        GameObject Hud_obj = ResourceManager.Instance.GetResource<GameObject>("Prefab/UI/HUDObj");
+        GameObject go = null;
+        if (Hud_obj != null)
+        {
+            go = GameObject.Instantiate(Hud_obj, Hud_obj.transform.position, Quaternion.identity);
+        }
+        if (isAvoid)
+        {
+            Hud_obj.GetComponent<HUDText>().Init(transform, value, 4, HUDT_offset);
+            return false;
+        }
+        if (value == 0)
+        {
+            Hud_obj.GetComponent<HUDText>().Init(transform, value, 9, HUDT_offset);
+            return false;
+        }
+        int hp = c_Value.hp - value;
+        c_Value.hp = hp;
+        if (crit)
+        {
+            go.GetComponent<HUDText>().Init(transform, value, 7, HUDT_offset);
+        }
+        else
+        {
+            go.GetComponent<HUDText>().Init(transform, value, 1, HUDT_offset);
+        }
+        if (c_Value.hp <= 0)
+        {
+            isDie = true;
+            _Anim.change_anim(Anim_state.Die);
+            transform.tag = "Untagged";
+        //    C_ctr.enabled = false;
+
+        }
+        return isDie;
+    }
+
     void attr_Upgrade(upgrade_info info)
     {
         switch (info.attr_ID)
@@ -110,20 +139,16 @@ public class C_attribute : MonoBehaviour
             case 200001:
                 int maxhp = Mathf.RoundToInt(Get_max_hp() * (info.type_attr.max_hp / 100f));
                 c_Value._upgrade.max_hp += maxhp;
-                qingzhiying.SetActive(true);
                 break;
             case 200002:
                 c_Value._upgrade.mp_Recovery += info.type_attr.mp_Recovery;
-                ruyi.SetActive(true);
                 break;
             case 200003:
                 int atk = Mathf.RoundToInt(Get_atk() * (info.type_attr.atk / 100f));
                 c_Value._upgrade.atk += atk;
-                shenmuqin.SetActive(true);
                 break;
             case 200004:
                 int def = Mathf.RoundToInt(Get_def() * (info.type_attr.def / 100f));
-                jiake.SetActive(true);
                 c_Value._upgrade.def += def;
                 break;
             case 200005:
@@ -137,7 +162,6 @@ public class C_attribute : MonoBehaviour
                 break;
             case 200008:
                 c_Value._upgrade.attack_speed += info.type_attr.attack_speed;
-                yazhui.SetActive(true);
                 break;
             case 200009:
                 c_Value._upgrade.cool_down += info.type_attr.cool_down;
@@ -150,7 +174,6 @@ public class C_attribute : MonoBehaviour
                 break;
             case 200012:
                 c_Value._upgrade.move_speed += info.type_attr.move_speed;
-                liulizhu.SetActive(true);
                 break;
             case 200013:
                 c_Value._upgrade.attack_distance += info.type_attr.attack_distance;

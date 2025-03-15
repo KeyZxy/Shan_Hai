@@ -10,7 +10,6 @@ public class Up_grade_panel_sc : MonoBehaviour
     public GameObject opt_2;
     public GameObject opt_3;
     public GameObject buttom_posi;
-    public GameObject bagua;
  
 
 
@@ -51,7 +50,6 @@ public class Up_grade_panel_sc : MonoBehaviour
         opt_1.SetActive(false);
         opt_2.SetActive(false);
         opt_3.SetActive(false);
-        bagua.SetActive(false);
 
     }
 
@@ -67,7 +65,6 @@ public class Up_grade_panel_sc : MonoBehaviour
         opt_1.SetActive(true);
         opt_2.SetActive(true);
         opt_3.SetActive(true);
-        bagua.SetActive(true);
 
 
         // 启动 UI 元素上升动画
@@ -130,7 +127,6 @@ public class Up_grade_panel_sc : MonoBehaviour
         opt_1.SetActive(false);
         opt_2.SetActive(false);
         opt_3.SetActive(false);
-        bagua.SetActive(false);
   
 
         opt_1.transform.position = startOffscreenPos_1;

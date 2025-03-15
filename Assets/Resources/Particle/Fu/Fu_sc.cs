@@ -65,7 +65,7 @@ public class Fu_sc : MonoBehaviour
                 // 当物体到达目标位置时销毁或停止
                 if (t >= 1f)
                 {
-                    transform.position = targetPosition; // 确保物体最后位置准确
+                    transform.position = _target.transform.position; // 确保物体最后位置准确
                                                          //    Destroy(gameObject); // 或者停止飞行
                     StartCoroutine(delay_destory(0.8f, gameObject));
                 }

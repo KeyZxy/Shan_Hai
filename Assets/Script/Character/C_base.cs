@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
@@ -11,6 +13,9 @@ public class C_base : MonoBehaviour
     public List<Player_skill_class> skill_class = new List<Player_skill_class>();
     //public bool canFly;
 
+    // 声明主角死亡事件（静态事件，全局广播）
+    public static event Action OnPlayerDeath;
+
     private CharacterController _ctr;
     private Transform _cam;
     private C_attribute _attr;
@@ -19,8 +24,10 @@ public class C_base : MonoBehaviour
     private C_Pick_up_sc _pickup;
     private Target_lock_sc _Lock_Sc;
 
+    private bool isDie = false;
     private bool isStop = false;
     private bool sprint = false;
+    private bool Jumping = false;
     private float move_x;
     private float move_y;
     private bool Key_move_click = false;
@@ -67,6 +74,8 @@ public class C_base : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDie)
+            return;
         if(isPaused) 
             return;
         Key_Check();
@@ -80,6 +89,14 @@ public class C_base : MonoBehaviour
     void FixedUpdate()
     {
         Gravity();
+        if (Jumping)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.4f))
+            {
+                Jumping = false;
+            }
+        }
     }
 
     // 找到距离摄像机中心最近的敌人
@@ -200,7 +217,7 @@ public class C_base : MonoBehaviour
         }
         else
         {
-            if (!Attacking)
+            if (!Anim_lock())
                 _anim.change_anim(Anim_state.Idle);
         }
     }
@@ -214,7 +231,7 @@ public class C_base : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.83f))
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.2f))
             {
                 isGrounded = true;
             }
@@ -482,6 +499,30 @@ public class C_base : MonoBehaviour
 
     }
 
+    // 受伤害函数
+    public void Get_damage(biology_info E_attr, Player_skill_class skill)
+    {
+        if (isDie)
+            return;
+        bool isCrit = false;
+
+        int damage = Attack_calculate.calculate_from_enemy(E_attr, _attr, ref isCrit, skill);
+        // Debug.Log(damage);
+        if (damage == -1)
+        {
+            // -1 表示闪避
+            _attr.Reduce_hp(damage, isCrit, true);
+            return;
+        }
+        // 修改生命值
+        isDie = _attr.Reduce_hp(damage, isCrit, false);
+        if(isDie)
+        {
+            // 发送死亡广播
+            OnPlayerDeath?.Invoke();
+        }
+
+    }
 
 
     void Key_Check()
@@ -531,7 +572,7 @@ public class C_base : MonoBehaviour
             //if (canFly)
             //    isFlying = false;
             //else
-            if (jiguangbo_ready || huongJue_ready)
+            if (jiguangbo_ready || huongJue_ready || Jumping)
                 return;
             _anim.change_anim(Anim_state.Sprint);
             StartCoroutine(DashForward());
@@ -594,8 +635,26 @@ public class C_base : MonoBehaviour
         }
         if(Input.GetKeyUp(KeyCode.LeftControl))
         {
-        //    _anim.change_anim(Anim_state.Jump);
+            if (jiguangbo_ready || huongJue_ready || sprint)
+                return;
+            if (CheckGrounded())
+            {
+                Jumping = true;
+                _anim.change_anim(Anim_state.Jump);
+                playerVelocity.y = 15;
+            }
         }
+    }
+
+    bool CheckGrounded()
+    {
+        // 从角色位置向下发射射线，长度为 groundCheckDistance
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.4f))
+        {
+            return true;  // 在可跳跃距离内
+        }
+        return false;
     }
 
     public void Set_Paused(bool p)
@@ -633,6 +692,8 @@ public class C_base : MonoBehaviour
         if (huongJue_ready)
             locker = true;
         if (jiguangbo_ready)
+            locker = true;
+        if (Jumping)
             locker = true;
         return locker;
     }
