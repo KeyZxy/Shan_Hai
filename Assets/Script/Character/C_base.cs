@@ -24,7 +24,7 @@ public class C_base : MonoBehaviour
     private C_Pick_up_sc _pickup;
     private Target_lock_sc _Lock_Sc;
 
-    private bool isDie = false;
+    public bool isDie = false;
     private bool isStop = false;
     private bool sprint = false;
     private bool Jumping = false;

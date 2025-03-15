@@ -72,7 +72,7 @@ public class UI_skill_option : MonoBehaviour
 
     void Attr_processing()
     {
-        string path = $"UI/Upgrade/{_upgrade_info.attr_ID}";
+        string path = $"UI/Upgrade1/{_upgrade_info.attr_ID}";
         Sprite newSprite = Resources.Load<Sprite>(path);
         if (newSprite != null)
         {
